@@ -26,7 +26,7 @@ class ChartViewController: UIViewController,ChartViewDelegate,UIPickerViewDelega
     
     //pickerView表記用 {$0}は全体を表す
     let years = (2021...2031).map{ $0 }
-    let months = (2021...12).map{ $0 }
+    let months = (1...12).map{ $0 }
     
     
     override func viewDidLoad() {
@@ -48,6 +48,8 @@ class ChartViewController: UIViewController,ChartViewDelegate,UIPickerViewDelega
         //現在時刻→年月を確認→その月のデータを全て取得する
         let date = GetDateModel.getTodayDate(slash: true)
         let dateArray = date.components(separatedBy: "/")
+        //ピッカーを隠しておく
+        pickerView.isHidden = true
         //LoadModelは何のため？？？
         loadModel.loadMyRecordData(userID: Auth.auth().currentUser!.uid, yearMonth: dateArray[0] + dateArray[1], day: dateArray[2])
     }
@@ -83,7 +85,7 @@ class ChartViewController: UIViewController,ChartViewDelegate,UIPickerViewDelega
         if component == 0{
             return "\(years[row])年"
         }else if component == 1{
-            return "\(months[row])年"
+            return "\(months[row])月"
         }else{
             return nil
         }
@@ -101,12 +103,12 @@ class ChartViewController: UIViewController,ChartViewDelegate,UIPickerViewDelega
         //1桁の値の場合
         if month < 10 {
             month_1digit = "0" + String(month)
-            dateLabel.text = "\(year)年\(month)月"
+            dateLabel.text = "\(year)年\(month_1digit)月"
             
             loadModel.loadMyRecordData(userID: Auth.auth().currentUser!.uid, yearMonth: String(year) + month_1digit, day: "")
             //2桁の値の場合
         }else{
-            dateLabel.text = "\(years)年\(months)月"
+            dateLabel.text = "\(year)年\(month)月"
             loadModel.loadMyRecordData(userID: Auth.auth().currentUser!.uid, yearMonth: String(year) + String(month), day: "")
         }
         //選択したタイミングでピッカービューを下げる
@@ -122,7 +124,14 @@ class ChartViewController: UIViewController,ChartViewDelegate,UIPickerViewDelega
         //1回目→2回目のDHデータの差分(データが登録されていれば)
         if chartArray.count > 0{
             increDecre.text = String(Double(chartArray.last!.dailyHassle)! - Double(chartArray.first!.dailyHassle)!)
-            sendModel.sendDailyHassles(userName: GetUserDataModel.getUserData(key: "userModel"), dailyHassles: increDecre.text!)
+            //追加(下にラベルをつける)
+            chartView.xAxis.labelPosition = .bottom
+            //X軸の縦の線の数
+            chartView.xAxis.labelCount = chartArray.count
+
+//            sendModel.sendDailyHassles(userName: GetUserDataModel.getUserData(key: "userModel"), dailyHassles: increDecre.text!)
+            //増減の結果をランキング用に送信する
+            sendModel.sendResultForRank(userName: GetUserDataModel.getUserData(key: "userName"), dailyHassles: increDecre.text!)
         }
     }
     
@@ -190,6 +199,18 @@ class ChartViewController: UIViewController,ChartViewDelegate,UIPickerViewDelega
         chart.animate(xAxisDuration: 2)
         
     }
+    
+    
+    @IBAction func toRankVC(_ sender: Any) {
+        let rankVC = self.storyboard?.instantiateViewController(identifier: "rankVC") as! RankingViewController
+        self.navigationController?.pushViewController(rankVC, animated: true)
+    }
+    
+    
+    @IBAction func pickerShowAction(_ sender: Any) {
+        pickerView.isHidden = false
+    }
+    
     /*
      // MARK: - Navigation
      

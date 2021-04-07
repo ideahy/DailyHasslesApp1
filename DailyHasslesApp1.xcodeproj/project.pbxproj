@@ -21,6 +21,9 @@
 		5E8D6B612617631800270A93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D6B602617631800270A93 /* Assets.xcassets */; };
 		5E8D6B642617631800270A93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D6B622617631800270A93 /* LaunchScreen.storyboard */; };
 		5E8D6B6E2617682B00270A93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D6B6D2617682B00270A93 /* GoogleService-Info.plist */; };
+		5E9B1BA9261D638F00884357 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B1BA8261D638F00884357 /* RankingViewController.swift */; };
+		5E9B1BAC261D65FF00884357 /* RankData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B1BAB261D65FF00884357 /* RankData.swift */; };
+		5E9B1BAF261D9E2300884357 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B1BAE261D9E2300884357 /* SettingViewController.swift */; };
 		5ED9B18D2618533300575837 /* GetUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED9B18C2618533300575837 /* GetUserDataModel.swift */; };
 		5ED9B1902618B5BD00575837 /* SendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED9B18F2618B5BD00575837 /* SendModel.swift */; };
 		935C7AB358427FF212D9FDD1 /* Pods_DailyHasslesApp1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E32EAD1CE8B7C5D288B326 /* Pods_DailyHasslesApp1.framework */; };
@@ -43,6 +46,9 @@
 		5E8D6B632617631800270A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E8D6B652617631800270A93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E8D6B6D2617682B00270A93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5E9B1BA8261D638F00884357 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		5E9B1BAB261D65FF00884357 /* RankData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankData.swift; sourceTree = "<group>"; };
+		5E9B1BAE261D9E2300884357 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5ED9B18C2618533300575837 /* GetUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDataModel.swift; sourceTree = "<group>"; };
 		5ED9B18F2618B5BD00575837 /* SendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendModel.swift; sourceTree = "<group>"; };
 		B0E32EAD1CE8B7C5D288B326 /* Pods_DailyHasslesApp1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHasslesApp1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +83,8 @@
 				5E3A5B5B26180AAC0089A0D4 /* RecordViewController.swift */,
 				5E3A5B5E26180E550089A0D4 /* TabBarController.swift */,
 				5E063684261B04A100100DEE /* ChartViewController.swift */,
+				5E9B1BA8261D638F00884357 /* RankingViewController.swift */,
+				5E9B1BAE261D9E2300884357 /* SettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -90,6 +98,7 @@
 				5E6DDBBE261AD55800B5D1F8 /* AlertSystem.swift */,
 				5E063687261B3C6500100DEE /* PersonalData.swift */,
 				5E06368A261B3FEC00100DEE /* LoadModel.swift */,
+				5E9B1BAB261D65FF00884357 /* RankData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,7 +263,10 @@
 			files = (
 				5E8D6B5C2617631600270A93 /* ViewController.swift in Sources */,
 				5E8D6B582617631600270A93 /* AppDelegate.swift in Sources */,
+				5E9B1BA9261D638F00884357 /* RankingViewController.swift in Sources */,
+				5E9B1BAC261D65FF00884357 /* RankData.swift in Sources */,
 				5E063688261B3C6500100DEE /* PersonalData.swift in Sources */,
+				5E9B1BAF261D9E2300884357 /* SettingViewController.swift in Sources */,
 				5E8D6B5A2617631600270A93 /* SceneDelegate.swift in Sources */,
 				5E3A5B5F26180E550089A0D4 /* TabBarController.swift in Sources */,
 				5E3A5B63261817500089A0D4 /* GetDateModel.swift in Sources */,
