@@ -13,5 +13,11 @@ target 'DailyHasslesApp1' do
   pod 'Firebase/Auth'
   pod 'EMAlertController'
 
+  pod 'BubbleTransition', '~> 3.2.0'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'ViewAnimator'
+  pod 'NVActivityIndicatorView'
+
+
 end
 

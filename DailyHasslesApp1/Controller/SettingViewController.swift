@@ -24,15 +24,9 @@ class SettingViewController: UIViewController {
         } catch let signOutError as NSError {
             print("Error signing out : %@", signOutError)
         }
+        
+        //"firstVC"へ画面遷移
+        let firstVC = self.storyboard?.instantiateViewController(identifier: "firstVC") as! ViewController
+        self.navigationController?.pushViewController(firstVC, animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

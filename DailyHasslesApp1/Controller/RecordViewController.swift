@@ -9,6 +9,7 @@ import UIKit
 
 class RecordViewController: UIViewController {
     
+    
     //FSに送信するものを集約したモデルにアクセス可能
     var sendModel = SendModel()
     var alertSystem = AlertSystem()
@@ -27,8 +28,8 @@ class RecordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //タブで画面遷移するのでバックボタンは不必要
-        self.navigationController?.isNavigationBarHidden = true
+//        //タブで画面遷移するのでバックボタンは不必要
+//        self.navigationController?.isNavigationBarHidden = true
     }
     
     
@@ -58,5 +59,9 @@ class RecordViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    
+    
+    
     
 }
