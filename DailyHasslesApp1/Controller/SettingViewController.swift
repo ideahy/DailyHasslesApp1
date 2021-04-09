@@ -24,6 +24,11 @@ class SettingViewController: UIViewController {
         } catch let signOutError as NSError {
             print("Error signing out : %@", signOutError)
         }
+        
+        //画面遷移
+        //"ViewController"へ画面遷移
+        let firstVC = self.storyboard?.instantiateViewController(identifier: "firstVC") as! ViewController
+        self.navigationController?.pushViewController(firstVC, animated: true)
     }
     /*
     // MARK: - Navigation
