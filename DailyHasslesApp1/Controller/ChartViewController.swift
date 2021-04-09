@@ -52,6 +52,8 @@ class ChartViewController: UIViewController,ChartViewDelegate,UIPickerViewDelega
         pickerView.isHidden = true
         //LoadModelは何のため？？？
         loadModel.loadMyRecordData(userID: Auth.auth().currentUser!.uid, yearMonth: dateArray[0] + dateArray[1], day: dateArray[2])
+        //タブで画面遷移するのでバックボタンは不必要
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     
@@ -203,6 +205,10 @@ class ChartViewController: UIViewController,ChartViewDelegate,UIPickerViewDelega
     
     @IBAction func toRankVC(_ sender: Any) {
         let rankVC = self.storyboard?.instantiateViewController(identifier: "rankVC") as! RankingViewController
+        
+        //戻る必要があるのでバックボタンは必要
+        self.navigationController?.isNavigationBarHidden = false
+
         self.navigationController?.pushViewController(rankVC, animated: true)
     }
     
