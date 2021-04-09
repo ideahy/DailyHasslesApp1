@@ -41,7 +41,7 @@
                                     <action selector="signUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vvy-cD-t0s"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザー名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pV-ni-6k5">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pV-ni-6k5">
                                 <rect key="frame" x="27" y="182" width="320" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -53,7 +53,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="6ck-5i-YSe"/>
                     <connections>
-                        <outlet property="userNameTextField" destination="8pV-ni-6k5" id="gpI-0P-lRQ"/>
+                        <outlet property="emailTextField" destination="8pV-ni-6k5" id="EQz-Df-cH7"/>
+                        <outlet property="passwordTextField" destination="9cL-Zo-JBa" id="2bZ-sT-JFh"/>
                         <segue destination="8kx-6Y-TCq" kind="show" id="doP-lT-VJh"/>
                     </connections>
                 </viewController>
